@@ -26,17 +26,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 //   connectionString: process.env.DATABASE_URL,
 //   ssl: false
 // });
-router.get('/health', async (req, res) => {   
-  // try {
-  //   const client = await pool.connect();
-  //   const result = await client.query('SELECT * FROM test_table');
-  //   // const results = { 'results': (result) ? result.rows : null};
-  //   // res.render('pages/db', results );
-  //   // client.release();
-  // } catch (err) {
-  //   console.error(err);
-  //   res.send("Error " + err);
-  // }
+router.get('/', async (req, res) => {   
+  res.send('app is healthy')
 });
 
 app.use('/graphql', graphqlHTTP({
