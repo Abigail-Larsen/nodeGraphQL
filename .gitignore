@@ -1,0 +1,7 @@
+/node_modules
+/dist
+/pkg
+.env
+ci/env/local
+*.tgz
+*.log
