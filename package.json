@@ -2,6 +2,7 @@
   "name": "nodeservice",
   "version": "1.0.0",
   "main": "./src/server.js",
+  "repository": "https://github.com/yabbbb/nodeGraphQL",
   "license": "MIT",
   "scripts": {
     "start": "node ./src/server.js"
