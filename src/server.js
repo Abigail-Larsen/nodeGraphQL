@@ -11,7 +11,8 @@ var root = require('./root')
 
 var app = express();
 
-var port = process.env.PORT || 9000
+const PORT = process.env.PORT || 9000;
+
 app.use(
   express.urlencoded({
     extended: true
@@ -36,5 +37,4 @@ app.use('/graphql', graphqlHTTP({
   graphiql: true, 
 }));
 
-app.set('port', port)
-app.listen(9000, () => console.log('Browse to localhost:9000/'));
+app.listen(PORT);
