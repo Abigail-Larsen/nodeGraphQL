@@ -3,22 +3,21 @@ var router = express.Router();
 var fs = require('fs')
 var request = require('request-promise'); 
 
-router.get('/', function (req, res) {
+router.get('/health', function (req, res) {
     console.log("HEY THERE")
-    res.send('Hello World')
+    res.send('HEALTHY')
 });
 
 router.post('/createNewVote', function (req, res) {
-    console.log(req.body.newForm)
+    // send to db
+    console.log('createNewVote', req.body.newForm)
     res.send('the router is healthy')
 });
 
-router.get("/vote/:id", (req, res) => {
-    let db = app.get("db");
-    db.getVoteFromId([req.body.id]).then(form => {
-        console.log("FORMMMM", form)
-      res.status(200).send(form);
-    });
+router.post("/postResponseToVote", (req, res) => {
+    console.log('createNewVote', req.body.vote)
+    // send to db
+    res.send('app is healthy')
 });
 
 

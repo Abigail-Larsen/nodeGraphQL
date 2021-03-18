@@ -1,6 +1,9 @@
+const getVote = require('./resolvers/getVote');
+const getKeyword = require('./resolvers/getKeyword');
 
 const root = {
-    photos: {}
+    getVote,
+    getKeyword
 };
-  
+
 module.exports = root;
