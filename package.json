@@ -5,6 +5,9 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./src/server.js"
+  },  
+  "engines": {
+    "node": "^14.12.0"
   },
   "dependencies": {
     "assert": "^2.0.0",
