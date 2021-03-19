@@ -5,8 +5,8 @@
   "repository": "https://github.com/yabbbb/nodeGraphQL",
   "license": "MIT",
   "scripts": {
-    "start": "node ./src/server.js"
-  },  
+    "start": "nodemon ./src/server.js"
+  },
   "engines": {
     "node": "^14.12.0"
   },
@@ -26,6 +26,7 @@
     "massive": "^6.7.1",
     "mssql": "^6.3.1",
     "mysql": "^2.18.1",
+    "nodemon": "^2.0.7",
     "path": "^0.12.7",
     "pg": "^8.5.1",
     "request": "^2.88.2",

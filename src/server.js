@@ -3,7 +3,6 @@ var path = require('path');
 var express = require('express');
 var { graphqlHTTP } = require('express-graphql');
 var cors = require('cors')
-// var { Pool } = require('pg');
 
 var router = require('./router')
 var schema = require('./schema')
@@ -23,11 +22,8 @@ app.use(express.json());
 app.use(router)
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'build')));
-// const pool = new Pool({
-//   connectionString: process.env.DATABASE_URL,
-//   ssl: false
-// });
-router.get('/', async (req, res) => {   
+
+app.get('/', async (req, res) => {
   res.send('app is healthy')
 });
 
