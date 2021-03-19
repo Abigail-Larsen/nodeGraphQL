@@ -7,12 +7,14 @@ const pool = new Pool({
     }
 });
 
-const getVote = async (req, res) => {
+const getResults = async (req, res) => {
+    console.log("heyyy", res.body.variables)
     const client = await pool.connect();
-    const queryString = `SELECT * FROM voteToSendDB WHERE id='${res.body.variables.id}'`;
+    const queryString = `SELECT * FROM votesDB WHERE id='${res.body.variables.id}'`;
     const result = await client.query(queryString);
     client.release();
-    return result.rows[0]
+    console.log('result', result.rows)
+    return result.rows
 }
 
-module.exports = getVote;
+module.exports = getResults;
