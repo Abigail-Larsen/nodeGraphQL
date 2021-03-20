@@ -19,9 +19,8 @@ app.use(
 );
   
 app.use(express.json());
-app.use(router)
 app.use(cors())
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(router)
 
 app.get('/', async (req, res) => {
   res.send('app is healthy')
@@ -33,4 +32,5 @@ app.use('/graphql', graphqlHTTP({
   graphiql: true, 
 }));
 
+app.use(express.static(path.join(__dirname, 'build')));
 app.listen(PORT);

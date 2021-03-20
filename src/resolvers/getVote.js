@@ -2,9 +2,7 @@ var { Pool } = require('pg');
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false
-    }
+    ssl: process.env.DATABASE_URL ? true : false
 });
 
 const getVote = async (req, res) => {

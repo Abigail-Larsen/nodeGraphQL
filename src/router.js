@@ -1,13 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var sql = require('mssql')
 var { Pool } = require('pg');
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false
-    }
+    ssl: process.env.DATABASE_URL ? true : false
 });
 
 router.get('/votesThatHaveBeenCreated', async (req, res) => {
