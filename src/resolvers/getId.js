@@ -8,7 +8,6 @@ const pool = new Pool({
 });
 
 const getId = async (req, res) => {
-    console.log("getId", res.body.variables)
     const client = await pool.connect();
     const queryString = `SELECT * FROM voteToSendDB WHERE keyword='${res.body.variables.keyword}'`;
     const result = await client.query(queryString);
